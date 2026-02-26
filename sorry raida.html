@@ -1,12 +1,117 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<NotepadPlus>
-    <Session activeView="0">
-        <mainView activeIndex="3">
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="1705" startPos="872" endPos="872" selMode="0" offset="0" wrapCount="1" lang="HTML" encoding="-1" userReadOnly="no" filename="C:\Program Files (x86)\Notepad++\new_game.html" backupFilePath="" originalFileLastModifTimestamp="372824330" originalFileLastModifTimestampHigh="31207715" tabColourId="-1" RTL="no" tabPinned="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="400" mapWrapIndentMode="-1" mapIsWrap="no" />
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="941" startPos="0" endPos="0" selMode="0" offset="0" wrapCount="1" lang="None (Normal Text)" encoding="-1" userReadOnly="no" filename="C:\Program Files (x86)\Notepad++\change.log" backupFilePath="" originalFileLastModifTimestamp="206394368" originalFileLastModifTimestampHigh="31198367" tabColourId="-1" RTL="no" tabPinned="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="862" startPos="286" endPos="286" selMode="0" offset="0" wrapCount="1" lang="JSON" encoding="-1" userReadOnly="no" filename="C:\Users\sakif\AppData\Roaming\discord\settings.json" backupFilePath="" originalFileLastModifTimestamp="246797154" originalFileLastModifTimestampHigh="31237791" tabColourId="-1" RTL="no" tabPinned="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="888" startPos="2639" endPos="2639" selMode="0" offset="0" wrapCount="1" lang="HTML" encoding="-1" userReadOnly="no" filename="C:\Users\sakif\AppData\Roaming\discord\sorry Raida.html" backupFilePath="" originalFileLastModifTimestamp="33646409" originalFileLastModifTimestampHigh="31237998" tabColourId="-1" RTL="no" tabPinned="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
-        </mainView>
-        <subView activeIndex="0" />
-    </Session>
-</NotepadPlus>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Raida 💐</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #e0c3fc);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Floating background animation */
+@keyframes bgMove {
+    0% {background-position: 0 0;}
+    100% {background-position: 400px 400px;}
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 2s ease;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+.heart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff4d6d;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% {transform: scale(1);}
+    25% {transform: scale(1.1);}
+    50% {transform: scale(1);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.flower {
+    position: absolute;
+    font-size: 24px;
+    animation: float 10s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    from {transform: translateY(100vh) rotate(0deg);}
+    to {transform: translateY(-10vh) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Dear Raida 🌸</h1>
+    <p>I'm really sorry for making fun of you.</p>
+    <p>I didn’t mean to hurt your feelings.</p>
+    <p>You mean a lot to me 💖</p>
+    <button class="heart-btn" onclick="forgive()">Please Forgive Me ❤️</button>
+</div>
+
+<script>
+function forgive() {
+    alert("Thank you for being kind 💐");
+}
+
+/* Create floating flowers */
+const flowers = ["🌸","🌺","🌼","💐","🌷"];
+
+for(let i=0; i<20; i++){
+    let flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
